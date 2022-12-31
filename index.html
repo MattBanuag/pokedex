@@ -6,11 +6,11 @@
         <meta name="author" content="Matthew Banuag">
         <meta name="description" content="My new cool project">
         <meta name="keywords" content="HTML, CSS, SEO, web, web development">
-        <title>Pokedex</title>
+        <title>Pokédex</title>
         <!-- GOOGLE FONTS -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Exo&family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&family=Josefin+Sans&display=swap" rel="stylesheet"> 
 
         <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
@@ -19,14 +19,39 @@
 
         <!--CSS, Favicon, Script-->
         <link rel="stylesheet" href="assets/styles/index.css" media="screen">
+        <link rel="shortcut icon" href="assets/medias/pokeball.png" type="image/x-icon">
         <script src="assets/scripts/index.js" defer></script>
     </head>
     <body>
-        <main class="wrapper">
-            
-        </main>
+        <div class="wrapper">
+            <header>
+                <div>
+                    <figure><img src="assets/medias/pokeball.png" alt="" class="pokeball"></figure>
+                    <h1>Pokédex</h1>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Trainer</a></li>
+                        <li><a href="#">Bag</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <form>
+                    <article>
+                        <h3>Welcome to the world of Pokémon!</h3>
+                        <p>Which Pokémon are looking for?</p>
+                    </article>
+
+                    <input type="search" placeholder="Search pokémon or type" class="search-input">
+                </form>
+            </main>
+        </div>
     </body>
     <noscript>
-        <p>This game requires JavaScript enabled</p>
+        <p>This app requires JavaScript enabled</p>
     </noscript>
 </html>

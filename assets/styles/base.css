@@ -2,3 +2,27 @@
 /* = = = = = = = = = = = = = = = */
 /* BODY STYLES                   */
 /* = = = = = = = = = = = = = = = */
+h1 {
+    font-family: 'Exo', sans-serif;
+    font-weight: 700;
+    color: #2B2E54;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+input[type=search] {
+    display: block;
+    width: 75%;
+    padding: 12px 12px 12px 40px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    overflow: hidden;
+    background-color: #E9ECEF;
+    background: #E9ECEF url('../medias/search.png') no-repeat 12px;
+}
