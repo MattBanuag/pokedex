@@ -14,7 +14,7 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 5px 10px;
+    padding: 5px 15px;
 }
 
 header div, header nav ul {
@@ -32,19 +32,42 @@ header div, header nav ul {
 /* MAIN                          */
 /* = = = = = = = = = = = = = = = */
 main {
-    padding: 20px 10px;
-    background-color: #FFF;
+    padding: 15px;
 }
 
 main form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 5px;
 }
 
-main form article {
-    text-align: center;
+/* = = = = = = = = = = = = = = = */
+/* Pokémon RESULTS               */
+/* = = = = = = = = = = = = = = = */
+.pokemon-cards {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 1rem;
+    margin: 20px 0;
 }
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pokemon-number {
+    color: #343A40;
+    font-weight: 600;
+}
+
+.pokemon-name {
+    font-family: 'Exo', sans-serif;
+}
+
 
 
