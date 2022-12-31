@@ -12,6 +12,10 @@ h1 {
     color: #2B2E54;
 }
 
+h2 {
+    text-align: center;
+}
+
 h3 {
     font-size: 1.3rem;
 }

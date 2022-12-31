@@ -58,6 +58,16 @@ main form {
     padding: 15px;
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: pointer;
+}
+
+.pokemon-img {
+    width: 200px;
+    height: 200px;
+}
+
+.pokemon-name {
+    font-family: 'Exo', sans-serif;
 }
 
 .pokemon-number {
@@ -65,9 +75,7 @@ main form {
     font-weight: 600;
 }
 
-.pokemon-name {
-    font-family: 'Exo', sans-serif;
-}
+
 
 
 
