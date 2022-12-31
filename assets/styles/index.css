@@ -89,7 +89,7 @@ main form {
 /* = = = = = = = = = = = = = = = */
 /* MEDIA QUERIES                 */
 /* = = = = = = = = = = = = = = = */
-@media (max-width: 400px) {
+@media (max-width: 500px) {
     .bars {
         display: inline;
         font-size: 1.5rem;
