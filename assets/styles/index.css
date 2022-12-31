@@ -25,7 +25,12 @@ header div, header nav ul {
 
 .pokeball {
     width: 70px;
-    height: 70px;
+    height: auto;
+}
+
+.bars {
+    display: none;
+    font-size: 1.5rem;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -46,7 +51,7 @@ main form {
 /* = = = = = = = = = = = = = = = */
 .pokemon-cards {
     display: grid;
-    grid-template-columns: 48% 48%;
+    grid-template-columns: 49% 49%;
     gap: 1rem;
     margin: 20px 0;
 }
@@ -55,19 +60,17 @@ main form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: auto;
+    height: auto;
     padding: 15px;
     border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
 }
 
 .pokemon-img {
-    width: 200px;
-    height: 200px;
-}
-
-.pokemon-name {
-    font-family: 'Exo', sans-serif;
+    width: 100%;
+    height: auto;
 }
 
 .pokemon-number {
@@ -75,7 +78,25 @@ main form {
     font-weight: 600;
 }
 
+.pokemon-name {
+    font-family: 'Exo', sans-serif;
+}
 
+.card ul li {
+    font-weight: 600;
+}
 
+/* = = = = = = = = = = = = = = = */
+/* MEDIA QUERIES                 */
+/* = = = = = = = = = = = = = = = */
+@media (max-width: 400px) {
+    .bars {
+        display: inline;
+    }
+
+    header nav ul li a {
+        display: none;
+    }
+}
 
 

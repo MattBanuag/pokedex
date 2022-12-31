@@ -37,6 +37,8 @@ async function fetchPokemon() {
             const data = await result.json();
             let pokeId = data.id;
             let pokeName = data.name;
+            let pokeType = data.types.map(type => type.type.name);
+
             pokemonCards.innerHTML += `
                 <div class="card">
                     <figure>
@@ -46,14 +48,21 @@ async function fetchPokemon() {
                     <p class="pokemon-name">
                         ${pokeName.charAt(0).toUpperCase()}${pokeName.slice(1, pokeName.length)}
                     </p>
+                    <ul>
+                        <li>${pokeType.join(', ')}
+                        </li>
+                    </ul>
                 </div>
             `;
+            
         } catch(error) {
             pokemonCards.innerHTML = `
                 <h2>Sorry, there was an error fetching the Pokémon</h2>
             `;
         }
     }
+
+    
 }
 
 fetchPokemon();
