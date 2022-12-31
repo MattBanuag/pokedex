@@ -15,6 +15,7 @@ header {
     align-items: center;
     width: 100%;
     padding: 5px 15px;
+    background-color: #264653;
 }
 
 header div, header nav ul {
@@ -30,7 +31,6 @@ header div, header nav ul {
 
 .bars {
     display: none;
-    font-size: 1.5rem;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -51,8 +51,8 @@ main form {
 /* = = = = = = = = = = = = = = = */
 .pokemon-cards {
     display: grid;
-    grid-template-columns: 49% 49%;
-    gap: 1rem;
+    grid-template-columns: 49.25% 49.25%;
+    gap: .5rem;
     margin: 20px 0;
 }
 
@@ -83,7 +83,10 @@ main form {
 }
 
 .card ul li {
+    padding: 2px 10px;
+    border-radius: 5px;
     font-weight: 600;
+    background-color: #D1D1D1;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -92,6 +95,8 @@ main form {
 @media (max-width: 400px) {
     .bars {
         display: inline;
+        font-size: 1.5rem;
+        color: #FFF;
     }
 
     header nav ul li a {
