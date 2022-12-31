@@ -66,7 +66,12 @@ main form {
     border-radius: 8px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     cursor: pointer;
+    transition: 0.1s ease-in-out;
 }
+
+.card:hover {
+    transform: translateY(-10px);
+}   
 
 .pokemon-img {
     width: 100%;
@@ -107,6 +112,7 @@ footer article {
         display: inline;
         font-size: 1.5rem;
         color: #FFF;
+        cursor: pointer;
     }
 
     header nav ul li a {
