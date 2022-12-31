@@ -34,6 +34,8 @@ async function fetchPokemon() {
                 throw new Error(`${result.statusText} (${result.status})`);
             }
 
+            
+
             const data = await result.json();
             let pokeId = data.id;
             let pokeName = data.name;

@@ -87,6 +87,19 @@ main form {
 }
 
 /* = = = = = = = = = = = = = = = */
+/* FOOTER                        */
+/* = = = = = = = = = = = = = = = */
+footer {
+    background-color: #264653;
+    padding: 5px 15px;
+    color: #FFF;
+}
+
+footer article {
+    text-align: center;
+}
+
+/* = = = = = = = = = = = = = = = */
 /* MEDIA QUERIES                 */
 /* = = = = = = = = = = = = = = = */
 @media (max-width: 500px) {
