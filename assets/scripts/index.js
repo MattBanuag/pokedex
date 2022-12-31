@@ -18,53 +18,50 @@ function selectAll(selector, parent = document) {
 const pokemonCards = select('.pokemon-cards');
 
 // FETCHING DATA FROM POKEAPI
-const options = {
-    method: 'GET',
-    mode: 'cors'
+/*
+    Fetches data all at once which enhances our code
+    and gets the data smoothly. Credit to James Quick for
+    the advice :)
+*/
+const fetchPokemon = () => {
+    const promises = [];
+    for (let i = 1; i <= 150; i++) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then((res) => res.json()));
+    }
+    Promise.all(promises).then((results) => {
+        const data = results.map((result) => ({
+            name: result.name,
+            image: result.sprites['front_default'],
+            type: result.types.map((type) => type.type.name).join(', '),
+            id: result.id
+        }));
+        displayPokemon(data);
+    });
 };
 
-async function fetchPokemon() {
-    for(let i = 1; i <= 150; i++) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        
-        try {
-            const result = await fetch(url, options);
-
-            if(!result.ok) {
-                throw new Error(`${result.statusText} (${result.status})`);
-            }
-
-            
-
-            const data = await result.json();
-            let pokeId = data.id;
-            let pokeName = data.name;
-            let pokeType = data.types.map(type => type.type.name);
-
-            pokemonCards.innerHTML += `
-                <div class="card">
-                    <figure>
-                        <img src="${data.sprites['front_default']}" alt="" class="pokemon-img">
-                    </figure>
-                    <p class="pokemon-number">#${String(pokeId).padStart(3, '0')}</p>
-                    <p class="pokemon-name">
-                        ${pokeName.charAt(0).toUpperCase()}${pokeName.slice(1, pokeName.length)}
-                    </p>
-                    <ul>
-                        <li>${pokeType.join(', ')}
-                        </li>
-                    </ul>
-                </div>
-            `;
-            
-        } catch(error) {
-            pokemonCards.innerHTML = `
-                <h2>Sorry, there was an error fetching the Pokémon</h2>
-            `;
-        }
-    }
-
-    
-}
+const displayPokemon = (data) => {
+    const pokemonData = data
+        .map(
+            (pokemon) => `
+        <div class="card">
+            <figure>
+                <img src="${pokemon.image}" alt="" class="pokemon-img">
+            </figure>
+            <p class="pokemon-number">#${String(pokemon.id).padStart(3, '0')}</p>
+            <p class="pokemon-name">
+                ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1, pokemon.name.length)}
+            </p>
+            <ul>
+                <li>
+                    ${pokemon.type}
+                </li>
+            </ul>
+        </div>
+    `
+        ).join('');
+    pokemonCards.innerHTML = pokemonData;
+};
 
 fetchPokemon();
+

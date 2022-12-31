@@ -1,9 +1,11 @@
 @import './base.css';
 /* = = = = = = = = = = = = = = = */
-/* WRAPPER                       */
+/* BODY                          */
 /* = = = = = = = = = = = = = = = */
-.wrapper {
-    height: 100vh;
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* = = = = = = = = = = = = = = = */
@@ -95,8 +97,9 @@ main form {
 /* FOOTER                        */
 /* = = = = = = = = = = = = = = = */
 footer {
-    background-color: #264653;
+    margin: auto;
     padding: 5px 15px;
+    background-color: #264653;
     color: #FFF;
 }
 
