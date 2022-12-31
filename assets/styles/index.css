@@ -2,5 +2,49 @@
 /* = = = = = = = = = = = = = = = */
 /* WRAPPER                       */
 /* = = = = = = = = = = = = = = = */
+.wrapper {
+    height: 100vh;
+}
+
+/* = = = = = = = = = = = = = = = */
+/* HEADER                        */
+/* = = = = = = = = = = = = = = = */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+header div, header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pokeball {
+    width: 70px;
+    height: 70px;
+}
+
+/* = = = = = = = = = = = = = = = */
+/* MAIN                          */
+/* = = = = = = = = = = = = = = = */
+main {
+    padding: 20px 10px;
+    background-color: #FFF;
+}
+
+main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+main form article {
+    text-align: center;
+}
 
 
