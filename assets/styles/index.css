@@ -103,20 +103,6 @@ main form {
 }
 
 /* = = = = = = = = = = = = = = = */
-/* FOOTER                        */
-/* = = = = = = = = = = = = = = = */
-footer {
-    margin: auto;
-    padding: 5px 15px;
-    background-color: #264653;
-    color: #FFF;
-}
-
-footer article {
-    text-align: center;
-}
-
-/* = = = = = = = = = = = = = = = */
 /* DIALOG                        */
 /* = = = = = = = = = = = = = = = */
 dialog {
