@@ -15,6 +15,7 @@ function selectAll(selector, parent = document) {
 }
 
 // HTML DOCUMENT BRIDGE
+const searchInput = select('.search-input');
 const pokemonCards = select('.pokemon-cards');
 const dialog = select('dialog');
 
@@ -31,7 +32,7 @@ const fetchPokemon = () => {
         promises.push(fetch(url).then((res) => res.json()));
     }
     Promise.all(promises).then((results) => {
-        const data = results.map((result) => ({
+            const data = results.map((result) => ({
             name: result.name,
             image: result.sprites['front_default'],
             type: result.types.map((type) => type.type.name).join(', '),
@@ -73,7 +74,6 @@ const selectPokemon = async (id) => {
 }
 
 const showCard = (pokemon) => {
-    console.log(pokemon)
     dialog.innerHTML = `
         <article class="dialog-head">
             <p class="pokemon-number">
