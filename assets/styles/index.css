@@ -17,7 +17,7 @@ header {
     align-items: center;
     width: 100%;
     padding: 5px 15px;
-    background-color: #264653;
+    background-color: #d90429;
 }
 
 header div, header nav ul {
@@ -31,15 +31,22 @@ header div, header nav ul {
     height: auto;
 }
 
-.bars {
-    display: none;
+.bead {
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
+
+.red { background-color: #ef233c; }
+.yellow { background-color: #ffd500; }
+.green { background-color: #006400; }
 
 /* = = = = = = = = = = = = = = = */
 /* MAIN                          */
 /* = = = = = = = = = = = = = = = */
 main {
     padding: 15px;
+    border: 15px solid #343a40;
 }
 
 main form {
@@ -154,20 +161,5 @@ dialog[open] {
     }
 }
 
-/* = = = = = = = = = = = = = = = */
-/* MEDIA QUERIES                 */
-/* = = = = = = = = = = = = = = = */
-@media (max-width: 500px) {
-    .bars {
-        display: inline;
-        font-size: 1.5rem;
-        color: #FFF;
-        cursor: pointer;
-    }
-
-    header nav ul li a {
-        display: none;
-    }
-}
 
 
