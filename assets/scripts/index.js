@@ -19,6 +19,12 @@ const searchInput = select('.search-input');
 const pokemonCards = select('.pokemon-cards');
 const dialog = select('dialog');
 
+// SEARCH AND DISPLAY
+onEvent('input', searchInput, (e) => {
+    const searchString = e.target.value.toLowerCase();
+    console.log(searchString);
+});
+
 // FETCHING DATA FROM POKEAPI
 /*
     Fetches data all at once which enhances our code
