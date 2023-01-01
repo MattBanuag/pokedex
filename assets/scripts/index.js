@@ -44,7 +44,7 @@ const displayPokemon = (data) => {
     const pokemonData = data
         .map(
             (pokemon) => `
-        <div class="card">
+        <div class="card" onclick="selectPokemon(${pokemon.id})">
             <figure>
                 <img src="${pokemon.image}" alt="" class="pokemon-img">
             </figure>
@@ -61,6 +61,18 @@ const displayPokemon = (data) => {
     `
         ).join('');
     pokemonCards.innerHTML = pokemonData;
+};
+
+// FETCHING AND DISPLAYING A POKEMON'S STATS DYNAMICALLY
+const selectPokemon = async (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const result = await fetch(url);
+    const pokemon = await result.json();
+    showCard(pokemon);
+}
+
+const showCard = (pokemon) => {
+    console.log(pokemon)
 };
 
 fetchPokemon();
