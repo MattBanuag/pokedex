@@ -82,7 +82,7 @@ main form {
     transform: translateY(-10px);
 }   
 
-.pokemon-img {
+.pokemon-img, .pokemon-card-img {
     width: 100%;
     height: auto;
     border-radius: 50%;
@@ -147,5 +147,20 @@ dialog[open] {
     }
 }
 
+/* = = = = = = = = = = = = = = = */
+/* MEDIA QUERY                   */
+/* = = = = = = = = = = = = = = = */
+@media (min-width: 750px) {
+    dialog {
+        width: 25%;
+    }
 
+    .pokemon-card-img {
+        width: 300px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
 

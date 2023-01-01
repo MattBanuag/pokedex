@@ -90,7 +90,7 @@ const showCard = (pokemon) => {
         </article>
 
         <figure>
-            <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-img">
+            <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-card-img">
         </figure>
 
         <article class="dialog-body">
