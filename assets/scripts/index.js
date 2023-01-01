@@ -16,6 +16,7 @@ function selectAll(selector, parent = document) {
 
 // HTML DOCUMENT BRIDGE
 const pokemonCards = select('.pokemon-cards');
+const dialog = select('dialog');
 
 // FETCHING DATA FROM POKEAPI
 /*
@@ -73,7 +74,39 @@ const selectPokemon = async (id) => {
 
 const showCard = (pokemon) => {
     console.log(pokemon)
+    dialog.innerHTML = `
+        <article class="dialog-head">
+            <p class="pokemon-number">
+                #${String(pokemon.id).padStart(3, '0')} | ${pokemon.name.charAt(0)
+                .toUpperCase()}${pokemon.name.slice(1, pokemon.name.length)}
+            </p>
+            <p><small>HP</small>${pokemon.stats[0].base_stat}</p>
+        </article>
+
+        <figure>
+            <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-img">
+        </figure>
+
+        <article class="dialog-body">
+            <p>Type: <span>${pokemon.types.map((type) => type.type.name).join(', ')}</span></p>
+            <p>Weight: ${pokemon.weight} | Height: ${pokemon.height}</p>
+            <p>
+                <small>ATK</small>${pokemon.stats[1].base_stat} | <small>DEF</small>${pokemon.stats[2].base_stat}
+            </p>
+        </article>
+    `;
+    dialog.showModal();
 };
+
+// Closing Modal
+onEvent('click', dialog, function(event) {
+    const rect = this.getBoundingClientRect();
+
+    if(event.clientY < rect.top || event.clientY > rect.bottom || 
+      event.clientX < rect.left || event.clientX > rect.right) {
+        dialog.close();
+    }
+});
 
 fetchPokemon();
 

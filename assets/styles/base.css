@@ -27,6 +27,10 @@ p {
     font-size: 1.2rem;
 }
 
+small {
+    font-size: 0.8rem;
+}
+
 input[type=search] {
     display: block;
     width: 100%;
