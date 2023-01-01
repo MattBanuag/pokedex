@@ -18,11 +18,31 @@ function selectAll(selector, parent = document) {
 const searchInput = select('.search-input');
 const pokemonCards = select('.pokemon-cards');
 const dialog = select('dialog');
+searchInput.value = '';
 
 // SEARCH AND DISPLAY
-onEvent('input', searchInput, (e) => {
-    const searchString = e.target.value.toLowerCase();
-    console.log(searchString);
+onEvent('input', searchInput, async (e) => {
+    let searchString = e.target.value.toLowerCase();
+    const url = `https://pokeapi.co/api/v2/pokemon/${searchString}`;
+    const result = await fetch(url);
+    const pokemon = await result.json();
+
+    pokemonCards.innerHTML = `
+        <div class="card" onclick="selectPokemon(${pokemon.id})">
+            <figure>
+                <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-img">
+            </figure>
+            <p class="pokemon-number">#${String(pokemon.id).padStart(3, '0')}</p>
+            <p class="pokemon-name">
+                ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1, pokemon.name.length)}
+            </p>
+            <ul>
+                <li>
+                    ${pokemon.types.map((type) => type.type.name).join('')}
+                </li>
+            </ul>
+        </div>
+        `;
 });
 
 // FETCHING DATA FROM POKEAPI
