@@ -56,6 +56,20 @@ main form {
     gap: 5px;
 }
 
+.back {
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.back:hover {
+    color: #d90429;
+}
+
+.hide {
+    display: none;
+}
+
 /* = = = = = = = = = = = = = = = */
 /* Pokémon RESULTS               */
 /* = = = = = = = = = = = = = = = */

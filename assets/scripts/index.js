@@ -16,11 +16,12 @@ function selectAll(selector, parent = document) {
 
 // HTML DOCUMENT BRIDGE
 const searchInput = select('.search-input');
+const backBtn = select('.back');
 const pokemonCards = select('.pokemon-cards');
 const dialog = select('dialog');
 searchInput.value = '';
 
-// SEARCH AND DISPLAY
+// SEARCH AND DISPLAY POKEMON
 onEvent('input', searchInput, async (e) => {
     let searchString = e.target.value.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${searchString}`;
@@ -43,6 +44,7 @@ onEvent('input', searchInput, async (e) => {
             </ul>
         </div>
         `;
+        backBtn.classList.remove('hide');
 });
 
 // FETCHING DATA FROM POKEAPI
@@ -123,6 +125,11 @@ const showCard = (pokemon) => {
     `;
     dialog.showModal();
 };
+
+// Back to Homepage
+onEvent('click', backBtn, () => {
+    window.location.reload();
+});
 
 // Closing Modal
 onEvent('click', dialog, function(event) {
