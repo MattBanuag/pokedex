@@ -17,7 +17,7 @@ function selectAll(selector, parent = document) {
 // HTML DOCUMENT BRIDGE
 const searchInput = select('.search-input');
 const backBtn = select('.back');
-const pokemonCards = select('.pokemon-cards');
+const resultContainer = select('.result-container');
 const dialog = select('dialog');
 searchInput.value = '';
 
@@ -28,7 +28,7 @@ onEvent('input', searchInput, async (e) => {
     const result = await fetch(url);
     const pokemon = await result.json();
 
-    pokemonCards.innerHTML = `
+    resultContainer.innerHTML = `
         <div class="card" onclick="selectPokemon(${pokemon.id})">
             <figure>
                 <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-img">
@@ -90,7 +90,7 @@ const displayPokemon = (data) => {
         </div>
     `
         ).join('');
-    pokemonCards.innerHTML = pokemonData;
+    resultContainer.innerHTML = pokemonData;
 };
 
 // FETCHING AND DISPLAYING A POKEMON'S STATS DYNAMICALLY
