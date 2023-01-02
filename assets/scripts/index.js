@@ -16,35 +16,23 @@ function selectAll(selector, parent = document) {
 
 // HTML DOCUMENT BRIDGE
 const searchInput = select('.search-input');
-const backBtn = select('.back');
 const resultContainer = select('.result-container');
 const dialog = select('dialog');
 searchInput.value = '';
 
 // SEARCH AND DISPLAY POKEMON
-onEvent('input', searchInput, async (e) => {
-    let searchString = e.target.value.toLowerCase();
-    const url = `https://pokeapi.co/api/v2/pokemon/${searchString}`;
-    const result = await fetch(url);
-    const pokemon = await result.json();
-
-    resultContainer.innerHTML = `
-        <div class="card" onclick="selectPokemon(${pokemon.id})">
-            <figure>
-                <img src="${pokemon.sprites['front_default']}" alt="" class="pokemon-img">
-            </figure>
-            <p class="pokemon-number">#${String(pokemon.id).padStart(3, '0')}</p>
-            <p class="pokemon-name">
-                ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1, pokemon.name.length)}
-            </p>
-            <ul>
-                <li>
-                    ${pokemon.types.map((type) => type.type.name).join('')}
-                </li>
-            </ul>
-        </div>
-        `;
-        backBtn.classList.remove('hide');
+onEvent('input', searchInput, () => {
+    let searchString = searchInput.value.toLowerCase();
+    const allCards = selectAll('.result-container div p');
+    
+    allCards.forEach((card) => {
+        const itemValue = card.textContent;
+        if(itemValue.includes(searchString)) {
+            card.parentElement.style.display = '';
+        } else {
+            card.parentElement.style.display = 'none';
+        }
+    });
 });
 
 // FETCHING DATA FROM POKEAPI
@@ -78,9 +66,9 @@ const displayPokemon = (data) => {
             <figure>
                 <img src="${pokemon.image}" alt="" class="pokemon-img">
             </figure>
-            <p class="pokemon-number">#${String(pokemon.id).padStart(3, '0')}</p>
+            <h3 class="pokemon-number">#${String(pokemon.id).padStart(3, '0')}</h3>
             <p class="pokemon-name">
-                ${pokemon.name.charAt(0).toUpperCase()}${pokemon.name.slice(1, pokemon.name.length)}
+                <span class="first-letter">${pokemon.name}</span>
             </p>
             <ul>
                 <li>
@@ -125,11 +113,6 @@ const showCard = (pokemon) => {
     `;
     dialog.showModal();
 };
-
-// Back to Homepage
-onEvent('click', backBtn, () => {
-    window.location.reload();
-});
 
 // Closing Modal
 onEvent('click', dialog, function(event) {
