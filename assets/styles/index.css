@@ -72,7 +72,7 @@ main form {
 /* = = = = = = = = = = = = = = = */
 /* Pokémon RESULTS               */
 /* = = = = = = = = = = = = = = = */
-.pokemon-cards {
+.result-container {
     display: grid;
     grid-template-columns: 49.25% 49.25%;
     gap: .5rem;
