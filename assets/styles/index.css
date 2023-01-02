@@ -45,7 +45,6 @@ header div, header nav ul {
 /* MAIN                          */
 /* = = = = = = = = = = = = = = = */
 main {
-    height: 100vh;
     padding: 15px;
     border: 15px solid #343a40;
 }
