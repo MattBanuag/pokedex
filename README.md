@@ -2,7 +2,7 @@
 Feel like a Pokémon trainer with this Pokédex.
 Made with HTML, CSS, and Vanilla JavaScript.
 
-Fetching from the PokeAPI to create a replica of the Pokedex. Best used on mobile. 
+Fetching from the PokeAPI to create a replica of the Pokedex.
 
 ### Languages
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
